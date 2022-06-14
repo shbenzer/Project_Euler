@@ -22,3 +22,9 @@ First line of each test file contains a single integer q that is the number of q
 # Output Format
 
 Print exactly two lines per each query. In the first line print the x-coordinate of the cursor and in the second line print the y-coordinate of the cursor. As  from input, these numbers should also be in hexadecimal.
+
+<br>
+
+# Solution Notes
+
+While my solution works, it is in desperate need of optimization and fails further hackerrank tests because of it. That is a task for another day, however.
