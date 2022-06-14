@@ -15,3 +15,11 @@ The only line of input contains numbers n and k separated by single space.
 
 Print the only number - your answer.
 
+<br>
+
+# Solution
+
+Iteration through all subsets is performed recursively.
+
+Answer is in C++.
+
