@@ -23,3 +23,5 @@ Iteration through all subsets is performed recursively.
 
 Answer is in C++.
 
+Complexity is approx. O(2^n).
+

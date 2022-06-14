@@ -5,22 +5,22 @@ using namespace std;
 using std::cin;
 using std::cout;
 using std::endl;
-using std::pow();
+using std::pow;
 
 void subset(long int aTemp, int anIndex, int aN, int aK, long int aSet[], int& aCount) {
     if (aN < 2) {
-        if(aTemp % aK == 0) {++Count; return;}
+        if(aTemp % aK == 0) {++aCount; return;}
         else {return;}
     }
-    
-    if (anIndex == aN-1) {return;} //prevents out of bounds
+    //cout << anIndex << ":" << aTemp << endl;
+    if (anIndex == aN) {return;} //prevents out of bounds
     
     //at each element, we include it or skip it
     subset(aTemp,anIndex+1,aN,aK,aSet,aCount); //skip it
     aTemp += aSet[anIndex];
     subset(aTemp,anIndex+1,aN,aK,aSet,aCount);//include it
     
-    if(aTemp % aK == 0) { ++aCount; cout << aTemp << endl;} //check if subset is divisible by k
+    if(aTemp % aK == 0) { ++aCount;} //check if subset is divisible by k
 }
 
 int main() {
