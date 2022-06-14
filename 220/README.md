@@ -15,7 +15,7 @@ What is the position of the cursor after  "F"-steps in ?
 
 # Input Format
 
-First line of each test file contains a single integer  that is the number of queries per test file.  blocks of  lines follow, the first of which contains a single integer  and the second contains a single integer . Note, that while  is given in decimal,  is given in hexadecimal.
+First line of each test file contains a single integer q that is the number of queries per test file. q blocks of 2 lines follow, the first of which contains a single integer n and the second contains a single integer m. Note, that while n is given in decimal, m is given in hexadecimal.
 
 # Constraints
 
