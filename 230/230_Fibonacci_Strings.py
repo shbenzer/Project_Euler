@@ -1,6 +1,6 @@
 import sys #io functionality
 
-""" Attempt 1: Far too slow; creates every fibonacci string
+""" Attempt 1: Far too slow and memory intensive; creates every fibonacci string
 def fibIt(a,b,n):
     
     #checks for easy out
@@ -19,7 +19,7 @@ def fibIt(a,b,n):
             del(temp)
         return temp_arr[1]
 """
-
+"""Attempt 2; uses 'a' and 'b' as string representation to decrease memory cost
 def fibIt(a,b,n):
     lenA = len(a)
     lenB = len(b)
@@ -59,8 +59,32 @@ def indexIt(fib,index,a,b):
     else:
         print('Incorrect parameter provided')
         return
+"""
 
-## Main Args ##
+""" Attempt 3 (UNFINISHED); calculates the length of the sequence needed, then attempts to figure out if it index is in string 'a' or 'b'; much less memory intensive; much faster
+def fibIt(a,b,n):
+    lenA = len(a)
+    lenB = len(b)
+    temp_arr = [lenA,lenB] #temp array to calculate further sequences
+    while (temp_arr[-1] < n):
+        temp_arr.append(temp_arr[-2]+temp_arr[-1])
+    #print(temp_arr)
+    seqNum = len(temp_arr)-1
+    while(n > (lenA+lenB)):
+        if(temp_arr[seqNum]<n):
+            n = n - temp_arr[seqNum]
+            seqNum -= 1
+        else:
+            n = temp_arr[seqNum] - n
+        seqNum -= 1
+    if(n > lenA):
+        n -= lenB
+        temp = a
+    else:
+        temp = b
+    #print(n)
+    return temp[n-1]
+"""
 
 #populate parameters
 inputs = []
