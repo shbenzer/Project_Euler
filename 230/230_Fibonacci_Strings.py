@@ -1,6 +1,6 @@
 import sys #io functionality
 
-""" Attempt 1: Far too slow and memory intensive; creates every fibonacci string
+""" Solution 1: Far too slow and memory intensive; creates every fibonacci string
 def fibIt(a,b,n):
     
     #checks for easy out
@@ -19,7 +19,7 @@ def fibIt(a,b,n):
             del(temp)
         return temp_arr[1]
 """
-"""Attempt 2; uses 'a' and 'b' as string representation to decrease memory cost
+"""Solution 2; uses 'a' and 'b' as string representation to decrease memory cost
 def fibIt(a,b,n):
     lenA = len(a)
     lenB = len(b)
@@ -61,7 +61,7 @@ def indexIt(fib,index,a,b):
         return
 """
 
-""" Attempt 3 (UNFINISHED); calculates the length of the sequence needed, then attempts to figure out if it index is in string 'a' or 'b'; much less memory intensive; much faster
+""" Solution 3 (UNFINISHED); calculates the length of the sequence needed, then attempts to figure out if it index is in string 'a' or 'b'; much less memory intensive; much faster
 def fibIt(a,b,n):
     lenA = len(a)
     lenB = len(b)
