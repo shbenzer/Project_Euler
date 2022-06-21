@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+class Solution {
+    //need for speed
+    static List<int> facts = new List<int>(new int[] {1,1,2,6,24,120,720,5040,40320,362880,3628800});
+    static List<int> gs = new List<int>(); // increases speed of subsequent runs
+    
+    //Sum of the factorials of the digits of n
+    static int f(int n){
+        int temp = 0;
+        while(n>0) {
+            int fact = n % 10;
+            temp += facts[fact];
+            n /= 10;
+        }
+        return temp;
+    }
+    
+    //Sum of the digits of a number
+    static int s(int n){
+        int temp = 0;
+        while(n>0) {
+            int fact = n % 10;
+            temp += fact;
+            n /= 10;
+        }
+        return temp;
+    }
+    
+    //Smallest positive integer n such that sf(n) = i
+    static int g(int i){
+       for(int j = 1; j < 1000000; ++j) {
+           if(gs.Count()>=j) {
+               if(gs[j-1] == i){
+                   return j;}
+               else {continue;}
+           } else {
+               if(s(f(j))==i){
+                   gs.Add(s(f(j)));
+                   return j;
+                } else {gs.Add(s(f(j)));}
+           }
+       }
+       Console.WriteLine("g not found");
+       return 0;
+    }
+    
+    static int sum(int n) {
+        int temp = 0;
+        for(int i = 1; i < n+1; ++i){temp+=s(g(i));}
+        return temp;
+    }
+    static void Main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution */
+    int input;
+    int.TryParse(Console.ReadLine(),out input);
+    int n,m;
+    for (int i = 0; i < input; ++i) {
+        string temp = Console.ReadLine();
+        string[] line = temp.Split(' ');
+        int.TryParse(line[0],out n);
+        int.TryParse(line[1],out m);
+        int output = sum(n) % m;
+        Console.WriteLine(output);
+    }
+    
+    }
+}
